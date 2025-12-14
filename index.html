@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUST TECH</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+      .copy{
+        bottom: 0px;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        color: white;
+        margin-bottom: 20px;
+      }
+      .copy a{
+        text-decoration: none;
+        color: #ff7200;
+        font-weight: bold;
+      }
+    </style>
+
+</head>
+<body>
+    <div class="logo">
+        <h1>GUST TECH</h1>
+        <h3>የቴክኖሎጅ ስልጠና ክፍል ማእከል</h3>
+      </div>
+    <div class="navbar" id="mynavbar">
+        <a href="#">HOME</a>
+        <a href="#">DESIGN</a>
+        <div class="dropdown">
+      <button class="dropdownbtn">tutorials</button>
+      <div class="dropdown-list">
+
+        <a href="#">HTML</a>
+        <a href="#">CSS</a>
+        <a href="#">JS</a>
+        <a href="#">PHP</a>
+        <a href="#">PHYTON</a>
+        <a href="#">MYSQL</a>
+
+      </div>
+       </div>
+        <a href="#">CONTACT</a>
+        <a href="#">ABOUT</a>
+        <a href="#" class="ri">LOGIN</a>
+        <a href="#" class="ri">SIGNUP</a>
+        <a href="javascript:void(0);"
+        style="font-size: 15px;" class="icon" onclick="myfunction()">&#9776;</a>
+    </div>
+    <div class="cont">
+      <h1>learn <br> <span> Technology</span></h1>
+      <p clas="para"><p>"If you can't resolve your problems in peace, you can't solve them with war".</p>
+    
+    <button class="learn"><a href="#">start now</a></button>
+  </div>
+  <div class="copy">
+    copyright &copy; 2010-2025<?php echo date("Y");?> <a href="#">GUST TECH</a> All rights reserved!
+
+  </div>
+  <script>
+    function myfunction(){
+      var x=document.getElementById("mynavbar");
+      if(x.className==="navbar"){
+        x.className+="responsive";
+      }else{
+        x.className="navbar";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
