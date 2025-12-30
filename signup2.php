@@ -6,6 +6,7 @@
     <title>signup</title>
 </head>
 <style>
+
     body{
         background-color: #d9dfeb;
     }
@@ -46,7 +47,7 @@
         padding-top: 20%px;
     }
     h1{
-        padding-left: 20%;
+        padding-left: 10%;
     }
     ul li a{
         text-decoration: none;
@@ -100,13 +101,41 @@
 
 </style>
 <body>
+<?php
+include "connection.php";
 
-    <div class="bar">
-        <div class ="logo">
-            <span class ="code-symbol">&lt;/&gt;</span>
-            Tech <span>Man</span>
-        </div>
-        <h1>Tech Man</h1>
+if(isset($_POST['register'])){
+    $username=$_POST['username'];
+    $email=$_POST['email'];
+    $gender=$_POST['gender'];
+    $password=$_POST['password'];
+    $rpassword=$_POST['rpassword'];
+     
+    $sql="insert into signup2(username,email,gender,password,rpassword)values
+    ('$username', '$email', '$gender', '$password', '$rpassword')";
+    $result=$conn->query($sql);
+    #$conn = new mysqli('localhost','root','','eer');
+    if($result){
+        echo "user acount successfully created";
+    }else{
+        echo "user acount not created";
+    }
+    
+    }
+    
+
+
+
+?>
+
+
+
+        <div class="bar">
+            <div class ="logo">
+                    <span class ="code-symbol">&lt;/&gt;</span>
+                    OFC <span>data</span>
+                </div>
+        <h1> EER</h1>
         <ul>
             <li> <a href="index.php">homepage</a></li>
             <li> <a href="">Aboutus</a></li>
@@ -116,12 +145,31 @@
         </ul>
 
     </div>
-    <div class="main">
-        <img src="ho.jpg" alt="">
+   
+        <div id="frm">
+            <h2 style="font-family: 'Times New Roman', Times, serif;color: rgb(54, 163, 59);">signup form</h2>
+            <br>
+           <form action="" method="post">
+
+            <input type="text" id="text" name="username" placeholder="user name" required><br><br>
+            <input type="email" id="text" name="email" placeholder="email" required><br><br>
+
+            <span style="font-weight: normal;">Gender</span>
+            <select name="Gender" id="text">
+                <option value="">male</option>
+                <option value="">female</option>
+
+            </select><br><br>
+            <input type="password" id="text" name="password" placeholder="password" required><br><br>
+            <input type="password" id="text" name="rpassword" placeholder="retype password" required><br><br>
+
+            <input type="submit" id="button" name="register" value="signup">
+           </form>
+        </div>
 
     </div>
     <div class="foot">
-        <h2>Tech man cadamy &copy; 2025 reserved</h2>
+        <h2>metro data collection&copy; 2025 reserved</h2>
     </div>
 </body>
 </html>

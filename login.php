@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +9,32 @@
     body{
         background-color: #d9dfeb;
     }
+    .logo {
+        font-family:arial,sans-serif;
+        font-sixe:10px;
+        font-weight:bold;
+        color: #00fff0;
+        display:flex;
+        flex-direction:column;
+        align-item:center;
+        justify-content: center;
+        gap:10px;
+        height:80px;
+        width: 80px;
+        background-color:#191f2a;
+        border-radius:50%;
+        text-align:center;
+        position: relative;
+        margin-left:10px;
+        }
+
+      .logo span{
+        color : #ffcc00;
+
+      }
     .bar{ 
         display: flex;
-        background-color: rgb(99, 100, 99);
+        background-color: blue;
         color: #d9dfeb;
         padding: 4px;
     }
@@ -35,9 +57,7 @@
         list-style-type: none;
 
     }
-    .main{
-        height: 55vh;
-    }
+    
     .login-container{
         background-color: #fdfffd;
         padding: 20px;
@@ -49,11 +69,7 @@
         margin-top: 100px;
 
     }
- h2{
-    text-align: center;
-    color: rgb(150, 148, 148);
-    margin-bottom: 20px;
- }
+ 
     .input-group{
         margin-bottom: 20px;
 
@@ -108,28 +124,60 @@
         
     }
     .foot{
-        background-color: rgb(99, 100, 99);
+        background-color: blue;
         padding: 10px;
         text-align: center;
         color: white;
 
     }
-
+ h3{
+    font-size:26px;
+ }
 </style>
-<body>
+<?php
+include "connection.php";
 
+if(isset($_POST['login'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Correct SQL with variables
+    $sql = "SELECT * FROM signup2 WHERE username = '$username' AND password = '$password'";
+
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        header("Location: gps.php");
+        exit;
+    } else {
+        echo "<h3 style='color:red; font-size:20px;'>Invalid username or password</h3>";
+    }
+}
+?>
+
+
+
+  
 
     <div class="bar">
-        <h1>GUST TECH </h1>
+    <div class ="logo">
+            <span class ="code-symbol">&lt;/&gt;</span>
+            Tech <span> Man</span>
+        </div>
+        <h1>Tech Man</h1>
         <ul>
-            <li> <a href="">homepage</a></li>
+            <li> <a href="index.php">homepage</a></li>
             <li> <a href="">Aboutus</a></li>
             <li> <a href="">Contact</a></li>
-            <li><a href="" style="background-color: rgb(54, 163, 59); padding: 5px 15px;">Login</a></li>
-            <li><a href="" style="background-color: rgb(54, 163, 59); padding: 5px 15px;">signup</a></li>
+            <li><a href="signup.php" style="background-color: rgb(54, 163, 59); padding: 5px 15px;">Login</a></li>
+            <li><a href="login.php" style="background-color: rgb(54, 163, 59); padding: 5px 15px;">signup</a></li>
         </ul>
 
     </div>
+    <body>
+        
+    
+
        <div class="main"> 
       <div class="login-container">
         <h2 style="font-family: 'Times New Roman', Times, serif;color: rgb(54, 163, 59);">login form</h2>
@@ -140,8 +188,9 @@
                 <input type="text" id="username" name="username" required>
 
                  </div>
+                 <div class="main">
 
-            <div class="input-group">
+        <div class="input-group">
                 <label for="password" id="label">password</label>
                 <input type="password" id="password" name="password" required>
 
@@ -153,11 +202,11 @@
             </div>
         </form>
       </div> 
-
-    </div>
+      </div> 
+    
     <div class="foot">
 
-        <h2>GUSTTECH ACADAMY &copy; 2025 reserved</h2>
+        <h3>Tech Man Acadamy &copy; 2025 reserved</h3>
     </div>
 </body>
 </html>
