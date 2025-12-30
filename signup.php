@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,8 +85,8 @@
             <li> <a href="">homepage</a></li>
             <li> <a href="">Aboutus</a></li>
             <li> <a href="">Contact</a></li>
-            <li><a href="login.php" style="background-color: rgb(54, 163, 59); padding: 5px 15px;">Login</a></li>
             <li><a href="signup.php" style="background-color: rgb(54, 163, 59); padding: 5px 15px;">signup</a></li>
+            <li><a href="login.php" style="background-color: rgb(54, 163, 59); padding: 5px 15px;">Login</a></li>
         </ul>
 
     </div>
@@ -101,7 +99,7 @@
             <input type="text" id="text" name="username" placeholder="user name" required><br><br>
             <input type="email" id="text" name="email" placeholder="email" required><br><br>
 
-            <span style="font-weight: normal;">Gender</span>
+            <span style="font-weight: normal;">Gender</span><br>
             <select name="Gender" id="text">
                 <option value="">male</option>
                 <option value="">female</option>
