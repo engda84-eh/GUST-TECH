@@ -1,0 +1,64 @@
+search php command
+
+<?php
+      
+      include "connection.php";
+      
+      if (isset($_POST['search'])) {
+      
+          $sid = $_POST['sid'];
+      
+          $sql = "SELECT * FROM student WHERE sid='$sid'";
+          $result = $conn->query($sql);
+      
+          if (mysqli_num_rows($result) > 0) {
+
+              ?>
+              
+              <table border="1px" width="100%" style="border-collapse:collapse;">
+                  <tr style="background-color:rgb(99,100,99); color:white; font-weight:bold; font-size:20px;">
+                      <th style="padding:6px;">ID</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Age</th>
+                      <th>Sex</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th>Course</th>
+                      <th>Date of Birth</th>
+                  <?php
+      while ($search = $result->fetch_assoc()) {
+      $sid = $search['sid'];
+      $fname = $search['fname'];
+      $lname = $search['lname'];
+      $age = $search['age'];
+      $sex = $search['sex'];
+      $email = $search['email'];
+      $phone = $search['phone'];
+      $course = $search['course'];
+      $dob = $search['birth_date'];
+
+echo "<tr style\"background-color:white;\">
+
+    <td>$sid</td>
+    <td>$fname</td>
+    <td>$lname</td>
+  <td>$age</td>
+  <td>$sex</td>
+  <td>$email</td>
+    <td>$phone</td>
+  <td>$course</td>
+      <td>$dob</td>
+      </tr>";
+
+                        
+              }
+      
+              echo "</table>";
+      
+          } else {
+              echo "Record is not found";
+          }
+      
+      }
+      ?>

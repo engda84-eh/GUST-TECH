@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,6 +89,7 @@
         border: none;
         background-color: rgb(54, 163, 59);
         font-weight: bold;
+        color: white;
     }
     img{
         width: 100%;
@@ -116,12 +120,31 @@
         </ul>
 
     </div>
-    <div class="main">
-        <img src="et.jpg" alt="">
+   
+        <div id="frm">
+            <h2 style="font-family: 'Times New Roman', Times, serif;color: rgb(54, 163, 59);">signup form</h2>
+            <br>
+           <form action="" method="post">
+
+            <input type="text" id="text" name="username" placeholder="user name" required><br><br>
+            <input type="email" id="text" name="email" placeholder="email" required><br><br>
+
+            <span style="font-weight: normal;">Gender</span><br>
+            <select name="Gender" id="text">
+                <option value="">male</option>
+                <option value="">female</option>
+
+            </select><br><br>
+            <input type="password" id="text" name="password" placeholder="password" required><br><br>
+            <input type="password" id="text" name="rpassword" placeholder="rtype password" required><br><br>
+
+            <input type="submit" id="button" name="register" value="signup">
+           </form>
+        </div>
 
     </div>
     <div class="foot">
-        <h2>Tech man cadamy &copy; 2025 reserved</h2>
+        <h2>Tech Man acadamy &copy; 2025 reserved</h2>
     </div>
 </body>
 </html>

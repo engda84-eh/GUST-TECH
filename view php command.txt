@@ -1,0 +1,122 @@
+view php command
+
+
+<?php
+      
+      include "connection.php";
+      
+      if (isset($_POST['veiw'])) {
+      
+         
+      
+          $sql = "SELECT * FROM student";
+          $result = $conn->query($sql);
+      ?>
+          
+              <table border="1px" width="100%" style="border-collapse:collapse;">
+                  <tr style="background-color:rgb(99,100,99); color:white; font-weight:bold; font-size:20px;">
+                      <th style="padding:6px;">ID</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Age</th>
+                      <th>Sex</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th>Course</th>
+                      <th>Date of Birth</th>
+                  <?php
+      while ($veiw = $result->fetch_assoc()) {
+      $sid = $veiw['sid'];
+      $fname = $veiw['fname'];
+      $lname = $veiw['lname'];
+      $age = $veiw['age'];
+      $sex = $veiw['sex'];
+      $email = $veiw['email'];
+      $phone = $veiw['phone'];
+      $course = $veiw['course'];
+      $dob = $veiw['birth_date'];
+
+echo "<tr style\"background-color:white;\">
+
+
+
+
+update connection.correction.
+<?php
+include "connection.php";
+if (isset($_POST['update'])) {
+  $sid = $_POST['sid'];
+  $fname = $_POST['fname'];
+  $lname = $_POST['lname'];
+  $age = $_POST['age'];
+  $sex = $_POST['sex'];
+  $email = $_POST['email'];
+  $phone = $_POST['phone'];
+  $course = $_POST['course'];
+  $dob = $_POST['birth_date'];
+    
+  $sql = "UPDATE student set sid='$sid', fname= '$fname',lname= '$lname',age= '$age',
+  sex= '$sex',email='$email', phone='$phone',course='$course',birth_date='$dob'where sid='$sid'";
+          
+  
+    $result =$conn->query($sql);
+    if($result){
+      echo "<h3 style ='color:green'> data successfuly updated.</h3>";
+
+    }else{
+      echo "<h3 style ='color:red'>data is not updated.</h3>";
+    }
+  }
+     ?>
+
+<?php
+include "connection.php";
+
+
+if (isset($_POST['update'])) {
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $sql="update login set username='$username',password='$password' where username='$username'";
+    $result =$conn->query($sql);
+    if($result){
+      echo "data successfuly updated";
+
+    }else{
+      echo "data is not updated";
+    }
+  }
+     ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <td>$sid</td>
+    <td>$fname</td>
+    <td>$lname</td>
+  <td>$age</td>
+  <td>$sex</td>
+  <td>$email</td>
+    <td>$phone</td>
+  <td>$course</td>
+      <td>$dob</td>
+      </tr>";
+
+                        
+              }
+      
+              echo "</table>";
+      
+          } 
+      ?>
